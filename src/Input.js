@@ -1,6 +1,6 @@
-import React from 'react'
+import { forwardRef } from 'react'
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
   return (
     <div className='mb-3'>
       <label htmlFor={props.name} className='form-label'>{props.title}</label>
@@ -8,6 +8,7 @@ const Input = (props) => {
         type={props.type}
         className={props.className}
         id={props.name}
+        ref={ref}
         autoComplete={props.autoComplete}
         // name={props.name}
         // value={props.value}
@@ -17,6 +18,6 @@ const Input = (props) => {
       />
     </div>
   )
-}
+});
 
 export default Input
